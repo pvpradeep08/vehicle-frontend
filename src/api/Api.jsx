@@ -11,7 +11,7 @@ const api = axios.create({
 
 
 // ================= VEHICLE APIs =================
-
+ 
 // Get all vehicles
 export const getAllVehicles = () => api.get("/vehicles");
 
