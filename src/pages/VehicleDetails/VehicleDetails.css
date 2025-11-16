@@ -1,0 +1,150 @@
+.vehicle-details {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 30px;
+  background-color: #f8f9fa;
+  min-height: 100vh;
+}
+
+.vehicle-details-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 350px;
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+  text-align: left;
+}
+
+.vehicle-image {
+  width: 100%;
+  height: 260px;
+  object-fit: cover;
+}
+
+.details {
+  margin: 0 auto;
+  padding: 20px;
+}
+
+.details h2 {
+  margin-bottom: 15px;
+  color: #333;
+}
+
+.details p {
+  margin: 6px 0;
+  color: #555;
+  font-size: 15px;
+}
+
+.book-now-btn {
+  background-color: #28a745;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  font-size: 1rem;
+  border-radius: 8px;
+  cursor: pointer;
+  margin-top: 15px;
+  transition: background-color 0.3s ease;
+  width: 100%;
+}
+
+.book-now-btn:hover {
+  background-color: #218838;
+}
+
+.book-now-btn:disabled {
+  background-color: #aaa;
+  cursor: not-allowed;
+}
+
+/* POPUP OVERLAY */
+.popup-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0,0,0,0.5);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 999;
+}
+
+/* POPUP BOX */
+.popup {
+  background: #fff;
+  padding: 25px;
+  width: 320px;
+  border-radius: 10px;
+  box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+  animation: slideDown 0.3s ease;
+}
+
+.popup h3 {
+  margin-bottom: 15px;
+  text-align: center;
+}
+
+.popup input {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0 15px;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+.popup-buttons {
+  display: flex;
+  justify-content: space-between;
+}
+
+.cancel-btn {
+  background: #999;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.confirm-btn {
+  background: #007bff;
+  color: white;
+  padding: 8px 16px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+.confirm-btn:disabled {
+  background: #4b8ad4;
+}
+
+/* Animation */
+@keyframes slideDown {
+  from {
+    transform: translateY(-20px);
+    opacity: 0;
+  }
+  to {
+    transform: translateY(0);
+    opacity: 1;
+  }
+}
+
+
+@media (max-width: 768px) {
+  .vehicle-details {
+    padding: 15px;
+  }
+
+  .vehicle-details-card {
+    max-width: 100%;
+  }
+}

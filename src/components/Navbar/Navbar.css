@@ -1,0 +1,118 @@
+.navbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #1e3a8a;
+  padding: 15px 25px;
+  color: white;
+  position: sticky;
+  top: 0;
+  z-index: 10000; /* keep navbar above dropdown and content */
+}
+
+.nav-logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  gap: 20px;
+  list-style: none;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.nav-links a:hover {
+  color: #ffd700;
+}
+
+.logout-btn {
+  cursor: pointer;
+  color: #ffd700;
+}
+
+.hamburger {
+  display: none;
+  font-size: 24px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .nav-links {
+    display: none;
+  }
+
+  .nav-links.open {
+    /* show vertical dropdown menu on mobile. Use fixed positioning and a max-height
+       so that tall menus don't overflow the viewport. Make the menu internally scrollable. */
+    display: flex;
+    flex-direction: column;
+    position: fixed;
+    top: 64px; /* below navbar */
+    right: 12px;
+    background-color: #1e3a8a;
+    padding: 8px;
+    border-radius: 6px;
+    box-shadow: 0 6px 18px rgba(0,0,0,0.15);
+    z-index: 9999;
+    width: min(90vw, 320px);
+    gap: 8px;
+    max-height: calc(100vh - 80px);
+    overflow-y: auto;
+    -webkit-overflow-scrolling: touch;
+    transition: transform 180ms ease, opacity 160ms ease;
+    transform-origin: top right;
+    opacity: 1;
+  }
+
+  .nav-links.open li {
+    text-align: right;
+    padding: 6px 8px;
+    border-radius: 4px;
+  }
+
+  /* ensure anchor fills the li so the whole area is tappable */
+  .nav-links.open a {
+    display: block;
+    width: 100%;
+  }
+
+  /* small scrollbar style for WebKit-based browsers (optional) */
+  .nav-links.open::-webkit-scrollbar {
+    width: 8px;
+  }
+
+  .nav-links.open::-webkit-scrollbar-thumb {
+    background: rgba(0,0,0,0.2);
+    border-radius: 6px;
+  }
+
+  /* On very small screens make the menu stretch horizontally with some padding */
+  @media (max-width: 420px) {
+    .nav-links.open {
+      left: 8px;
+      right: 8px;
+      width: auto;
+      top: 56px;
+      border-radius: 4px;
+    }
+  }
+
+  .hamburger {
+    display: block;
+    background: transparent;
+    border: none;
+    color: white;
+    font-size: 22px;
+    cursor: pointer;
+    padding: 6px 8px;
+      height: 20px;
+      width: 20px;
+   
+  }
+}
